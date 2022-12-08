@@ -8,6 +8,9 @@ class Main_controller extends CI_Controller {
 	}
     public function index()
 	{
+        if(!empty($this->session->userdata('isLogin') == TRUE)) {
+            redirect(base_url('homepage'));
+        }
 		$this->load->view('login');
 	}
     public function login_action() {
@@ -36,8 +39,12 @@ class Main_controller extends CI_Controller {
     }
     public function signup()
 	{
+        if(!empty($this->session->userdata('isLogin') == TRUE)) {
+            redirect(base_url('homepage'));
+        }
 		$this->load->view('signup');
 	}
+
     public function signup_action() {
         $this->load->model('db_model');
         $table = 'user_accounts';
@@ -66,9 +73,18 @@ class Main_controller extends CI_Controller {
                     redirect(base_url('login'));
                 }
             }
+            else if($num_email > 0 ) {
+                $this->session->set_flashdata('error', 'Email sudah terdaftar');
+                redirect(base_url('signup'));
+            }
+            else if ($num_username > 0) {
+                $this->session->set_flashdata('error', 'Username sudah terdaftar');
+                redirect(base_url('signup'));
+            }
         }
         else {
-            alert('Password tidak sesuai');
+            $this->session->set_flashdata('error', 'Password tidak Sesuai');
+            redirect(base_url('signup'));
         }
     }
 
