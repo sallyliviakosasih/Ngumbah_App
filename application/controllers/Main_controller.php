@@ -29,7 +29,7 @@ class Main_controller extends CI_Controller {
             if(password_verify($password, $data->password)) {
                 $this->session->set_userdata('isLogin', true);
                 $this->session->set_userdata('username', $username);
-                redirect(base_url('homepage', ));
+                redirect(base_url('homepage'));
             }
             else {
                 $this->session->set_flashdata('error', 'Password yang dimasukan salah');
@@ -93,8 +93,8 @@ class Main_controller extends CI_Controller {
             $this->session->set_flashdata('error', 'Pengguna belum Masuk');
             redirect(base_url('login'));
         }
-        $username = $this->session->userdata('username');
-        $this->load->view('index', $username);
+        $data_parsed['username'] = $this->session->userdata('username');
+        $this->load->view('index', $data_parsed );
     }
 
     public function logout_action() {

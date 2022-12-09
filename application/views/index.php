@@ -14,7 +14,7 @@
         <button id="more_navigation_list" aria-label="more_navigation_list">&#9776</button>
         <nav id="navigation_list">
             <a href="#">Riwayat Pemesanan</a>
-            <a href="#" id="username_button">Pengguna_01</a>
+            <a href="#" id="username_button"><?= $username?></a>
             <a href="<?=base_url('logout')?>">Keluar</a>
         </nav>
     </header>
