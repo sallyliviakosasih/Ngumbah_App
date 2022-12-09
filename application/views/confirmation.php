@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
+<html>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="<?=base_url('css/styles.css')?>">
@@ -18,67 +18,59 @@
         </header>
         <main>
             <div class="order_container">
-                <h1 id="order_title">Pemesanan Layanan Laundry</h1>
-                <form class="order_form" method="post" action="<?=base_url('order_action')?>/?id=<?=$this->input->get('id')?>">
-                    <table class="data_order">
+                <h1 id="confirmation_title">Konfirmasi Data Pemesanan</h1>
+                <form class="confirmation_form" method="post" action="<?=base_url('confirmation_action')?>">
+                    <table>
                         <tr>
-                            <td>
-                                <label>Nama Paket</label>
+                            <td>Nama</td>
+                            <td>:</td>
+                            <td><?=$name?></td>
+                        </tr>
+                        <tr>
+                            <td>Nomor Telepon/Hp</td>
+                            <td>:</td>
+                            <td><?=$phone?></td>
+                        </tr>
+                        <tr>
+                            <td>Alamat Lengkap</td>
+                            <td>:</td>
+                            <td><?=$address?></td>
+                        </tr>
+                        <tr>
+                            <td>Pilihan Layanan</td>
+                            <td>:</td>
+                            <td><?=$package_name?></td>
+                        </tr>
+                        <tr>
+                            <td>Estimasi Berat</td>
+                            <td>:</td>
+                            <td><?=$weight?> kg</td>
+                        </tr>
+                        <tr>
+                            <td>Catatan :</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <textarea id="user_notes" placeholder="Catatan untuk toko mengenai laundry yang akan dilakukan" readonly><?=$notes?></textarea>
                             </td>
                         </tr>
                         <tr>
-                            <td class="input_column">
-                                <h4 name="package_name"><?=$package_name?></h4>
-                            </td>
+                            <td>Biaya Paket</td>
+                            <td>:</td>
+                            <td id="package_cost">Rp<?=$package_cost?></td>
                         </tr>
                         <tr>
-                            <td>
-                                <label for="weight">Berat Laundry</label> 
-                            </td>
+                            <td>Biaya Pengiriman</td>
+                            <td>:</td>
+                            <td id="delivery_cost">Rp<?=$delivery_cost?></td>
                         </tr>
                         <tr>
-                            <td>
-                                <input type="text" placeholder="Berat Laundry (kg)" id="input_weight" name="weight" class="input_column" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="notes">Catatan</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <textarea placeholder="Catatan untuk toko mengenai laundry yang akan dilakukan" name="notes" id="input_notes" class="input_column"></textarea>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="user_name">Nama Pengguna</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Masukan Nama Pemesan" id="input_name" name="user_name" class="input_column" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="phone">Nomor Telepon/Hp</label></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Masukan Nomor Telepon/Hp Pemesan" id="input_phone" name="phone" class="input_column" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="address">Alamat Lengkap</label></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="text" placeholder="Masukan Alamat Lengkap Pemesan" id="input_address" name="address" class="input_column" required>
-                            </td>
+                            <td class="total">Total Biaya Pemesanan</td>
+                            <td class="total">:</td>
+                            <td class="total" id="total_cost">Rp<?=$total_cost?></td>
                         </tr>
                     </table>
-                    <button type="submit" name="place_order_button" id="place_order_button">Buat Pesanan</bytton>
+                    <button type="submit" id="confirmation_button">Konfirmasi Pemesanan</button>
                 </form>
             </div>
         </main>

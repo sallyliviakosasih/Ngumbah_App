@@ -376,9 +376,16 @@ label {
     color: white;
     text-decoration: none;
     font-weight: bolder;
+    border: none;
+    cursor: pointer;
 }
 
 /*CONFIRMATION PAGE STYLES*/
+#confirmation_title {
+    text-align: center;
+    color: #01A6CA;
+    font-size: 28px;
+}
 .confirmation_form{
     width: 80%;
 }
@@ -398,6 +405,18 @@ label {
             border: 1px solid #01A6CA;
             resize: none;
         }
+        .confirmation_form table tr > #package_cost {
+            text-align: right;
+        }
+        .confirmation_form table tr > #delivery_cost {
+            text-align: right;
+        }
+        .confirmation_form table tr > .total {
+            font-weight: bold;
+        }
+        .confirmation_form table tr #total_cost {
+            text-align: right;
+        }
 
     .confirmation_form #confirmation_button {
         background-color: #01A6CA;
@@ -407,6 +426,7 @@ label {
         border: none;
         font-weight: bold;
         color: white;
+        cursor: pointer;
     }
 
 

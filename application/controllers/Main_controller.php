@@ -68,7 +68,7 @@ class Main_controller extends CI_Controller {
                     "username" => $username,
                     "password" => $password,
                 );
-                $result = $this->db_model->sign_up($table, $user_data);
+                $result = $this->db_model->addToDatabase($table, $user_data);
                 if ($result) {
                     redirect(base_url('login'));
                 }

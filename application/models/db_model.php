@@ -10,7 +10,7 @@ class Db_model extends CI_Model {
         return $this->db->get($table);
     }
 
-    public function sign_up($table, $data) {
+    public function addToDatabase($table, $data) {
         $result = $this->db->insert($table, $data);
         return $result;
     }

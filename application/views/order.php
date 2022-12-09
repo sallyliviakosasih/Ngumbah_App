@@ -33,13 +33,13 @@
                                     else { ?>
                                              <p>Harga: <?=$package['price']?>/satuan (Harga tidak Termasuk Pengiriman)</p>
                                         <?php }?>
-                                <a href="<?=base_url('order/data_order/').$package['id']?>" class="pick_package_button">Pilih Layanan ini</a>
+                                <a href="<?=base_url('order/data_order')?>?id=<?=$package['id']?>" class="pick_package_button">Pilih Layanan ini</a>
                             </div>
                         <?php } ?>
                 </form>
             </div>
         </main>
-            <footer>
+        <footer>
             <img src="<?=base_url('assets/images/Ngumbah_icon2.png')?>" id="footer_logo" alt="Ngumbah App's Footer Logo">
             <div class="footer_description">
                 <h2>Kontak Kami</h2>

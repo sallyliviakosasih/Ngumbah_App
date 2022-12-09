@@ -3,17 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width='device-width', initial-scale=1.0">
-        <link rel="stylesheet" href="./src/style/styles.css">
+        <link rel="stylesheet" href="<?=base_url('css/styles.css')?>">
         <title>Ngumbah App -- Detail Pesanan Laundry</title>
     </head>
     <body>
         <header>
-            <img src="./src/public/images/Ngumbah_icon1.png" id="header_logo" alt="Ngumbah App's Header Logo">
+            <img src="<?=base_url('assets/images/Ngumbah_icon1.png')?>" id="header_logo" alt="Ngumbah App's Header Logo">
             <button id="more_navigation_list" aria-label="more_navigation_list">&#9776</button>
             <nav id="navigation_list">
-                <a href="./index.php">Halaman Utama</a>
-                <a href="#" id="username_button">Pengguna_01</a>
-                <a href="#">Keluar</a>
+                <a href="<?=base_url('homepage')?>">Halaman Utama</a>
+                <a href="#" id="username_button"><?= $username?></a>
+                <a href="<?=base_url('logout')?>">Keluar</a>
             </nav>
         </header>
         <main>
@@ -24,38 +24,41 @@
                         <tr>
                             <td>ID Pemesanan</td>
                             <td>:</td>
-                            <td>NH00003</td>
+                            <td><?=$id?></td>
                         </tr>
                         <tr>
                             <td>Nama Pemesan</td>
                             <td>:</td>
-                            <td>Pengguna 01</td>
+                            <td><?=$name?></td>
                         </tr>
                         <tr>
                             <td>Nomor Telepon/Hp</td>
                             <td>:</td>
-                            <td>081234567890</td>
+                            <td><?=$phone?></td>
                         </tr>
                         <tr>
                             <td>Alamat Lengkap</td>
                             <td>:</td>
-                            <td>Jalan Lorem ipsum dolor sit, No. 01, Indonesia</td>
+                            <td><?=$address?></td>
                         </tr>
                         <tr>
                             <td>Paket Pilihan</td>
                             <td>:</td>
-                            <td>Normal Clean</td>
+                            <td><?=$package_name?></td>
                         </tr>
                         <tr>
                             <td>Berat Total Laundry</td>
                             <td>:</td>
-                            <td>10 kg</td>
+                            <td><?=$weight?> kg</td>
                         </tr>
                         <tr>
                             <td>Status Pembayaran</td>
                             <td>:</td>
-                            <td>Lunas</td>
-                            <td>Tidak Lunas</td>
+                            <?php if ($payment_status === 'Lunas') { ?>
+                                <td>Lunas</td>
+                            <?php } else { ?>
+                                <td>Tidak Lunas</td>
+                            <?php }?>
                         </tr>
                     </table>
                 </div>
@@ -131,23 +134,23 @@
             </div>
         </main>
         <footer>
-            <img src="./src/public/images/Ngumbah_icon2.png" id="footer_logo" alt="Ngumbah App's Footer Logo">
+            <img src="<?=base_url('assets/images/Ngumbah_icon2.png')?>" id="footer_logo" alt="Ngumbah App's Footer Logo">
             <div class="footer_description">
                 <h2>Kontak Kami</h2>
                 <div class="footer_information">
-                    <img src="./src/public/images/location.png" id="location_icon" alt="location's icon">
+                    <img src="<?=base_url('assets/images/location.png')?>" id="location_icon" alt="location's icon">
                     <p>Jalan Lorem ipsum dolor, No. 0001, Indonesia</p>
                 </div>
                 <div class="footer_information">
-                    <img src="./src/public/images/phone.png" id="phone_icon" alt="phone's icon">
+                    <img src="<?=base_url('assets/images/phone.png')?>" id="phone_icon" alt="phone's icon">
                     <p>0811234567890</p>
                 </div>
                 <div class="footer_information">
-                    <img src="./src/public/images/instagram.png" id="instagram_icon" alt="instagram's icon">
+                    <img src="<?=base_url('assets/images/instagram.png')?>" id="instagram_icon" alt="instagram's icon">
                     <p>Ngumbah_App</p>
                 </div>
             </div>
             <p class="copyright">Ngumbah App Inc 2022</p>
-        </footer>
+    </footer>
     </body>
 </html>
