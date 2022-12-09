@@ -6,6 +6,10 @@ class Db_model extends CI_Model {
         return $this->db->get_where($table, $data);
     }
 
+    public function getAllData($table) {
+        return $this->db->get($table);
+    }
+
     public function sign_up($table, $data) {
         $result = $this->db->insert($table, $data);
         return $result;

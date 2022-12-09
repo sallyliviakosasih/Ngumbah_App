@@ -574,7 +574,6 @@ header {
   }
   main{
     grid-area: main;
-    background-color: aliceblue;
     padding: 0 0;
   }
   

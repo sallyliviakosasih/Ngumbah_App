@@ -102,7 +102,7 @@
                     <p>Kami menyediakan jasa layanan update status pemesanan secara live sehingga pengguna dapat mengetahui proses dari laundry yang dipesan</p>
                 </div>
             </div>
-            <a href="./order.php" id="order_button">Pesan Laundry Sekarang</a>
+            <a href="<?=base_url('order')?>" id="order_button">Pesan Laundry Sekarang</a>
         </div>
     </main>
     <footer>

@@ -54,6 +54,7 @@ $route['signup'] = 'main_controller/signup';
 $route['login'] = 'main_controller';
 $route['homepage'] = 'main_controller/homepage';
 $route['logout'] = 'main_controller/logout_action';
+$route['order'] = 'order';
 
 /* HAPUS ROUTE TESTDB SETELAH PROJECT SELESAI */
 $route['testdb'] = 'main_controller/testdb';
