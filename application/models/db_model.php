@@ -35,6 +35,10 @@ class Db_model extends CI_Model {
         return $this->db->delete($table, $data);
     }
 
+    public function updateDataTransaction($table, $data, $location) {
+        return $this->db->update($table, $data, $location);
+    }
+    
     public function testdb() {
         $data = $this->db->query("SELECT * FROM user_accounts");
         return $data->result_array();

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="<?=base_url('assets/images/Ngumbah_Icon4.png')?>">
     <title>Ngumbah App -- Homepage</title>
     <link rel="stylesheet" href="<?=base_url('css/styles.css')?>">
 </head>
@@ -13,7 +14,7 @@
         <img src="<?=base_url('assets/images/Ngumbah_icon1.png')?>" id="header_logo" alt="Ngumbah App's Header Logo">
         <button id="more_navigation_list" aria-label="more_navigation_list">&#9776</button>
         <nav id="navigation_list">
-            <a href="#">Keluar</a>
+            <a href="<?=base_url('admin_logout_action')?>">Keluar</a>
         </nav>
     </header>
     <main>
@@ -58,7 +59,7 @@
                     </tr>
                 </table>
             </div>
-            <form>
+            <form method="post" action="<?=base_url('update_action').'?id='.$id?>">
                 <h2 id="detail_sub_title">Update Status Pemesanan</h2>
                 <div class="user_transaction_status">
                     <table>
@@ -73,7 +74,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <input type="checkbox" id="payment_confirmed" name="paymet_confirmed" value="payment_confirmed" <?=($order_status['payment_confirmed'] == '1') 'checked': '';?>>
+                                <input type="checkbox" id="payment_confirmed" name="payment_confirmed" value="payment_confirmed" <?=($order_status['payment_confirmed'] == '1') ? 'checked': '';?>>
                                 <label for="vehicle1">Pembayaran telah di konfirmasi</label>
                             </td>
                         </tr>

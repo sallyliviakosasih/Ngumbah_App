@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ngumbah App -- Homepage</title>
+    <link rel="icon" type="image/x-icon" href="<?=base_url('assets/images/Ngumbah_Icon4.png')?>">
     <link rel="stylesheet" href="<?=base_url('css/styles.css')?>">
 </head>
 

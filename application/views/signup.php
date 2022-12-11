@@ -4,6 +4,7 @@
 <head>
     <title>Ngumbah App -- Registrasi</title>
     <link rel="stylesheet" href="<?=base_url('css/styles.css')?>">
+    <link rel="icon" type="image/x-icon" href="<?=base_url('assets/images/Ngumbah_Icon4.png')?>">
 </head>
 
 <body>

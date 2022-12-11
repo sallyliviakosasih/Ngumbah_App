@@ -69,6 +69,8 @@ $route['login_admin'] = 'admin_controller';
 $route['login_admin_action'] = 'admin_controller/login_admin_action';
 $route['customer_data'] = 'admin_controller/customer_data';
 $route['user_detail_transaction'] = 'admin_controller/detail_admin';
+$route['update_action'] = 'admin_controller/update_action';
+$route['admin_logout_action'] = 'admin_controller/admin_logout_action';
 /* HAPUS ROUTE TESTDB SETELAH PROJECT SELESAI */
 $route['testdb'] = 'main_controller/testdb';
 

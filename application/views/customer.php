@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ngumbah App -- Homepage</title>
+    <link rel="icon" type="image/x-icon" href="<?=base_url('assets/images/Ngumbah_Icon4.png')?>">
     <link rel="stylesheet" href="<?=base_url('css/styles.css')?>">
 </head>
 
@@ -13,7 +14,7 @@
         <img src="<?=base_url('assets/images/Ngumbah_icon1.png')?>" id="header_logo" alt="Ngumbah App's Header Logo">
         <button id="more_navigation_list" aria-label="more_navigation_list">&#9776</button>
         <nav id="navigation_list">
-            <a href="#">Keluar</a>
+            <a href="<?=base_url('admin_logout_action')?>">Keluar</a>
         </nav>
     </header>
     <main>

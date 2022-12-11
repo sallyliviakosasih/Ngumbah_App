@@ -60,5 +60,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             ];
             $this->load->view('detail-admin', $data_parsed);
         }
+
+        public function update_action() {
+            $id = $this->input->get('id');
+            $table = 'transaction_details';
+            $this->load->model('db_model');
+            $data_transaction = $this->db_model->db_verification($table, ["id" => $id])->row();
+            $order_confirmed = (isset($_POST['order_confirmed']))? '1' : '0';
+            
+            $payment_confirmed = (isset($_POST['payment_confirmed'])) ? '1' : '0';
+            
+            $order_received = (isset($_POST['order_received'])) ? '1' : '0';
+            
+            $order_processed = (isset($_POST['order_processed'])) ? '1' : '0';
+            
+            $order_packed = (isset($_POST['order_packed'])) ? '1' : '0';
+
+            $order_sent = (isset($_POST['order_sent'])) ? '1' : '0';
+            
+            $order_arrived = (isset($_POST['order_arrived'])) ? '1' : '0';
+
+            $data = [
+                "id" => $id,
+                "username" => $data_transaction->username,
+                "order_confirmed" => $order_confirmed,
+                "payment_confirmed" => $payment_confirmed,
+                "order_received" => $order_received,
+                "order_processed" => $order_processed,
+                "order_packed" => $order_packed,
+                "order_sent" => $order_sent,
+                "order_arrived" => $order_arrived,
+            ];
+
+            $result = $this->db_model->updateDataTransaction('transaction_details', $data, ['id' => $id]);
+            
+            if($result) {
+                redirect(base_url('customer_data'),'refresh');
+            }
+        }
+        public function admin_logout_action() {
+            $this->session->sess_destroy();
+            redirect(base_url('login_admin'));
+        }
     }
 ?>
