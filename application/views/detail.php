@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width='device-width', initial-scale=1.0">
+        <meta name="dicoding:email" content="sallyliviak.1807@gmail.com">
         <link rel="stylesheet" href="<?=base_url('css/styles.css')?>">
         <link rel="icon" type="image/x-icon" href="<?=base_url('assets/images/Ngumbah_Icon4.png')?>">
         <title>Ngumbah App -- Detail Pesanan Laundry</title>
