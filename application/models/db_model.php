@@ -16,11 +16,15 @@ class Db_model extends CI_Model {
     }
     
     public function getTransactionData($table, $data) {
-        return $this->db->query("SELECT * FROM ".$table." WHERE username='".$data."' LIMIT 3");
+        return $this->db->query("SELECT * FROM ".$table." WHERE username='".$data."' ORDER BY no DESC LIMIT 3");
     }
 
     public function getAllTransactionData($table, $data) {
-        return $this->db->query("SELECT * FROM ".$table." WHERE username='".$data."'");
+        return $this->db->query("SELECT * FROM ".$table." WHERE username='".$data."' ORDER BY no DESC");
+    }
+
+    public function getSomeDataFromTable($data, $table) {
+        return $this->db->query("SELECT ".$data." FROM ".$table);
     }
 
     public function getStatusTransaction($table, $data) {

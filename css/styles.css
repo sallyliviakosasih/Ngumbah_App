@@ -495,137 +495,81 @@ header {
 
         
 /*DASBORD PAGE STYLES*/
-.dasbord_container{
-    width: 100%;
-    display: grid;
-    grid-template-areas: "aside main" "nav main";
-    grid-template-columns: 0.3fr 1.7fr;
-    grid-template-rows: 1fr 3fr;
-  }
-  
-  .dasbord_container aside{
-    grid-area: aside;
-    background-color: #D7D4D4;
-    padding: 30px 0;
-  }
-  
-  .dasbord_container nav{
-    grid-area: nav;
-    background-color:#D7D4D4;
-  }
-  
-  .user_admin h1{
-    background-image: url(../public/images/user-account-box-64px.png);
-    background-size: 64px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-position-x: 4%;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    height: 70px;
-    color: black;
-  }
-  
-  .user_admin a{
-    text-decoration: none;
-  }
-  .user_admin{
-    padding-left: 10px !important;
-    height: 70px;
-  }
-  
-  #nav_admin{
-    padding-left: 10px !important;
-  }
-  
-  #nav_admin a{
-    text-decoration: none;
-    
-  }
-  
-  .dasbord_admin{
-    background-image: url(../public/images/home_32px.png);
-    background-size: 32px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-position-x: 10%;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    height: 40px;
-    color: black;
-  }
-  
-  .transaksi_admin{
-    background-image: url(../public/images/money_32px.png);
-    background-size: 32px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-position-x: 10%;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    height: 40px;
-    color: black;
-  }
-  
-  .customer_admin{
-    background-image: url(../public/images/user_32px.png);
-    background-size: 32px;
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-position-x: 10%;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    height: 40px;
-    color: black;
-  }
-  
-  .button_terima{
-    display: flex;
-    align-items: center;
-    justify-content:center;
-  }
-  
-  .button_terima button{
-    width: 150px;
-    height: 50px;
-    background-color:#01a6ca;
-    border-color: #01a6ca;
-    text-decoration: none;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;  
-  }
-  
-  .button_tolak{
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    padding-left: 20px;
-  }
-  
-  .button_tolak button{
-    width: 150px;
-    height: 50px;
-    background-color:#01a6ca;
-    border-color: #01a6ca;
-    text-decoration: none;
-    color: white;
-    font-weight: bolder;
-  }
   main{
     grid-area: main;
     padding: 0 0;
   }
-  
-  .order_container_admin{
+
+  #welcome_greeting {
+    color:#01A6CA;
+    margin: 50px 10%;
+  }
+
+
+  #container_title {
+    text-align: center;
+    color:#01A6CA
+  }
+
+  .transactions_container_admin{
     width: 80%;
     margin: 50px auto;
-    padding: 20px 20px;
+    padding: 50px 5%;
     box-shadow: 0 4px 10px 0px gainsboro;
+  }
+  .transactions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .user_transaction {
+    background-color: #F5F5F5;
+    padding: 15px 20px 30px 20px;
+    margin: 25px 10px;
+  }
+
+  .user_transaction_detail {
+    margin: 20px auto;
+  }
+  .user_transaction_detail table tr td {
+    padding-left: 10px;
+  }
+  .user_transaction_status {
+    width:60%;
+    margin: 30px auto;
+  }
+  .user_transaction_status table {
+    width: 100%;
+  }
+  .user_transaction_status table tr input {
+    margin-right: 3%;
+  }
+  .user_transaction_status table tr td {
+    padding: 5px 0;
+  }
+  .user_transaction_status table tr td label {
+    font-size: 18px;
+  }
+
+  .user_detail_transaction_button {
+    text-decoration: none;
+    background-color: #01A6CA;
+    padding:8px 10px;
+    color: white;
+    margin: auto;
+    text-align: center;
+    display: block;
+    width: 80%;
+  }
+
+  #update_user_transaction_status {
+    background-color: #01a6ca;
+    display: block;
+    color:white;
+    margin: 10px auto;
+    border: none;
+    padding:20px 30px;
+    font-weight: bolder;
   }
 
 
