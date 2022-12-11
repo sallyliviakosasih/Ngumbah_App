@@ -64,74 +64,37 @@
                 </div>
                 <h2 id="detail_sub_title">Status Pemesanan</h2>
                 <div class="transaction_status">
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="confirmed_transaction" name="confirmed_transaction" value="Transaction Confirmed" disabled>
-                            </td>
-                            <td>
-                                <p id="confirmed_transaction">Pesanan telah dikonfirmasi</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="confirmed_payment" name="confirmed_payment" value="Payment Confirmed" disabled>
-                            </td>
-                            <td>
-                                <p id="confirmed_payment">Pembayaran telah dikonfirmasi</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="order_accepted" name="order_accepted" value="Order Accepted" disabled>
-                            </td>
-                            <td>
-                                <p id="order_accepted">Laundry telah diterima toko</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="processing_order" name="processing_order" value="Processing Order" disabled>
-                            </td>
-                            <td>
-                                <p id="processing_order">Laundry sedang diproses/dicuci</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="finishing_process" name="finishing_process" value="Finishing Process" disabled>
-                            </td>
-                            <td>
-                                <p id="finishing_process">Laundry sedang disetrika/dirapikan</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="packing_order" name="packing_order" value="Packing Order" disabled>
-                            </td>
-                            <td>
-                                <p id="packing_order">Laundry sedang di packing dan akan segera dikirim ke pemesan</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="delivery_order" name="delivery_order" value="Delivering Order" disabled>
-                            </td>
-                            <td>
-                                <p id="delivery_order">Laundry sedang dikirim ke alamat pemesan</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="arrived_order" name="arrived_order" value="Order arrived" disabled>
-                            </td>
-                            <td>
-                                <p id="arrived_order">Laundry telah tiba di alamat pemesan dan telah diterima pemesan</p>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="status_container">
+                            <div class="status">
+                                <div class="status_mark <?=($order_status['order_confirmed'] == '1') ? 'complete': '';?>">&check;</div>
+                                <div class="status_name">Pesanan telah dikonfirmasi</div>
+                            </div>
+                            <div class="status">
+                                <div class="status_mark <?=($order_status['payment_confirmed'] == '1') ? 'complete': '';?>">&check;</div>
+                                <div class="status_name">Pembayaran telah dikonfirmasi</div>
+                            </div>
+                            <div class="status">
+                                <div class="status_mark <?=($order_status['order_received'] == '1') ? 'complete': '';?>">&check;</div>
+                                <div class="status_name">Laundry telah diterima di toko</div>
+                            </div>
+                            <div class="status">
+                                <div class="status_mark <?=($order_status['order_processed'] == '1') ? 'complete': '';?>">&check;</div>
+                                <div class="status_name">Laundry sedang di proses</div>
+                            </div>
+                            <div class="status">
+                                <div class="status_mark <?=($order_status['order_packed'] == '1') ? 'complete': '';?>">&check;</div>
+                                <div class="status_name">Laundry sedang dipacking dan akan dikirim ke pemesan</div>
+                            </div>
+                            <div class="status">
+                                <div class="status_mark <?=($order_status['order_sent'] == '1') ? 'complete': '';?>">&check;</div>
+                                <div class="status_name">Laundry sedang dikirim ke alamat pemesan</div>
+                            </div>         
+                            <div class="status">
+                                <div class="status_mark <?=($order_status['order_arrived'] == '1') ? 'complete': '';?>">&check;</div>
+                                <div class="status_name">Laundry sampai di alamat pemesan</div>
+                            </div>  
+                    </div>
                 </div>
-            </div>
         </main>
         <footer>
             <img src="<?=base_url('assets/images/Ngumbah_icon2.png')?>" id="footer_logo" alt="Ngumbah App's Footer Logo">

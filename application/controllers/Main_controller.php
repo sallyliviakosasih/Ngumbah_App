@@ -92,15 +92,31 @@ class Main_controller extends CI_Controller {
         if(!empty($this->session->userdata('isLogin') == FALSE)) {
             $this->session->set_flashdata('error', 'Pengguna belum Masuk');
             redirect(base_url('login'));
-        }
-        $data_parsed['username'] = $this->session->userdata('username');
+        };
+        $this->load->model('db_model');
+        $username = $this->session->userdata('username');
+        $data_parsed = [
+            "username" =>  $username,
+            "transactions" => $this->db_model->getTransactionData('transaction_details', $username),
+        ];
         $this->load->view('index', $data_parsed );
+    }
+
+    public function history() {
+        $username = $this->session->userdata('username');
+        $this->load->model('db_model');
+        $data_parsed = [
+            "username" => $username,
+            "transactions" => $this->db_model->getAllTransactionData('transaction_details', $username),
+        ];
+        $this->load->view('history', $data_parsed);
     }
 
     public function logout_action() {
         $this->session->sess_destroy();
         redirect(base_url('login'));
     }
+
 
     /* HAPUS BAGIAN TESTDB SETELAH PROJECT SELESAI SERTA ROUTING PADA CONFIG/ROUTES.PHP DAN MODEL TESTDB() PADA DOKUMEN APPLICATION/MODELS/DB_MODEL.PHP */
     public function testdb() {

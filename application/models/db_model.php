@@ -15,6 +15,22 @@ class Db_model extends CI_Model {
         return $result;
     }
     
+    public function getTransactionData($table, $data) {
+        return $this->db->query("SELECT * FROM ".$table." WHERE username='".$data."' LIMIT 3");
+    }
+
+    public function getAllTransactionData($table, $data) {
+        return $this->db->query("SELECT * FROM ".$table." WHERE username='".$data."'");
+    }
+
+    public function getStatusTransaction($table, $data) {
+        return $this->db->query("SELECT * FROM ".$table." WHERE id='".$data."'");
+    }
+
+    public function deleteDataHistory($table, $data) {
+        return $this->db->delete($table, $data);
+    }
+
     public function testdb() {
         $data = $this->db->query("SELECT * FROM user_accounts");
         return $data->result_array();

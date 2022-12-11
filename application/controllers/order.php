@@ -106,11 +106,23 @@ class order extends CI_Controller {
             "delivery_cost" => $order_data['delivery_cost'],
             "total_payment" => $order_data['total_cost'],
             "payment_status" => $payment_status,
-            "status" => $order_status,
+        ];
+
+        $status_data = [
+            "id" => $id,
+            "username" => $order_data['username'],
+            "order_confirmed" => ($payment_status == 'Lunas') ? '1' : '0',
+            "payment_confirmed" => ($payment_status == 'Lunas') ? '1' : '0',
+            "order_received" => '0',
+            "order_processed" => '0',
+            "order_packed" => '0',
+            "order_sent" => '0',
+            "order_arrived" => '0',
             "date" => mdate("%Y-%m-%d"),
         ];
 
-        $result = $this->db_model->addToDatabase('user_transaction', $data);
+        $result = $this->db_model->addToDatabase('user_transaction', $data) && $this->db_model->addToDatabase('transaction_details', $status_data);
+
         if($result) {
             redirect(base_url('detail_transaction').'?id='.$id);
         } else {
@@ -121,6 +133,15 @@ class order extends CI_Controller {
     public function detail() {
         $order_data = $this->session->userdata('order_data');
         $this->load->view('detail',$order_data);
+    }
+
+    public function delete_history() {
+        $this->load->model('db_model');
+        $id =  $this->input->get('id');
+        $result = $this->db_model->deleteDataHistory('user_transaction', ["id" => $id]) && $this->db_model->deleteDataHistory('transaction_details', ["id" => $id]);
+        if($result) {
+            redirect(base_url('homepage'),'refresh');
+        }
     }
 }
 ?>

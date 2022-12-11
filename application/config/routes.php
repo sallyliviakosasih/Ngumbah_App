@@ -53,13 +53,17 @@ $route['default_controller'] = 'main_controller';
 $route['signup'] = 'main_controller/signup';
 $route['login'] = 'main_controller';
 $route['homepage'] = 'main_controller/homepage';
+$route['history'] = 'main_controller/history';
 $route['logout'] = 'main_controller/logout_action';
+
 $route['order'] = 'order';
 $route['order_action'] = 'order/order_action';
 $route['confirmation'] = 'order/confirmation';
 $route['confirmation_action'] = 'order/confirmation_action';
-$route['detail_transaction'] = 'detail';
+$route['delete_history'] = 'order/delete_history';
 
+
+$route['detail_transaction'] = 'detail';
 /* HAPUS ROUTE TESTDB SETELAH PROJECT SELESAI */
 $route['testdb'] = 'main_controller/testdb';
 

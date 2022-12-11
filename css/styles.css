@@ -144,7 +144,7 @@ label {
 .history_container {
     box-shadow: 0px 4px 4px 0px gainsboro;
     width:80%;
-    margin: auto;
+    margin: 20px auto;
     padding: 50px 30px;
     margin-bottom: 18px;
 }
@@ -157,7 +157,6 @@ label {
         text-align: center;
         margin-top: 20px;
         color: rgb(154, 154, 154);
-        display: none;
     }
 
     .list_of_histories {
@@ -201,6 +200,8 @@ label {
         background-size: contain;
         background-repeat: no-repeat;
         padding-left: 5%;
+        text-decoration: none;
+        font-weight: bolder;
     }
     .delete_icon {
         margin-left: auto;
@@ -338,16 +339,39 @@ label {
         padding: 25px 10%;
     }
 
-        .transaction_status table {
-            width: 100%;
+        .transaction_status > .status_container {
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px 10px;
+        }
+        .status_container > .status {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex: 1;
         }
 
-            .transaction_status table tr td {
-                padding-bottom: 10px;
-            }
-            .transaction_status p {
-                margin-left: 5%;
-            }
+        .status > .status_mark {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: gainsboro;
+            margin-bottom: 6px;
+            font-weight: bolder;
+        }
+
+        .status > .status_name {
+            text-align: center;
+            margin-left: 10px;
+        }
+        .status_mark.complete {
+            background-color: #01a6ca;
+            color:white;
+        }
 
 
 /*DATA ORDER PAGE STYLES*/
