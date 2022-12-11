@@ -1,0 +1,5 @@
+Cara Menggunakan / Menjalankan aplikasi Web Ngumbah App
+1. Download Projek Git dan letakan pada dokumen htdocs dari Aplikasi XAMPP
+2. Download dan import database yang telah dilampirkan pada phpmyadmin
+3. Jalankan url : localhost/ngumbah_app (untuk pengguna) dan localhost/ngumbah_app/login_admin
+4. Untuk demonstrasi halaman admin dapat digunakan username : admin1 dan password admin
